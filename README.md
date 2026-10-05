@@ -13,6 +13,18 @@ Verified on:
 
 The repository is intentionally narrow. Findings are stated as verified for this platform/firmware unless another system is independently reproduced.
 
+### End-to-end validation
+
+The documented preprocessing model was validated against the original research machine:
+
+- an offline physical-key candidate matching the stored digest was recovered;
+- the candidate was accepted by the real firmware setup;
+- the BIOS administrator password was removed successfully;
+- the official HP BIOS update was then installed from USB;
+- after reboot, the operating system reported `L70 Ver. 01.47`, BIOS release date `03/03/2020`.
+
+The real password hash, recovered password, and recovered physical-key sequence are intentionally not published.
+
 ## Main finding
 
 On the tested L70 firmware, the BIOS administrator password is not hashed directly as the visible text.
@@ -57,7 +69,7 @@ The work was performed read-only until the password representation and verifier 
 - `tools/extract_l70_mapping.py` — reconstruct the L70 US-English key map from a user-supplied `SmmPlatform.efi`
 - `tools/verify_synthetic.py` — synthetic demonstration of HP's preprocessing + SHA-1
 - `examples/synthetic-example.txt` — example output using no real device secret
-- `evidence/` — sanitized platform/checksum evidence only
+- `evidence/` — sanitized platform/checksum/outcome evidence only
 - `docs/DATA_HANDLING.md` — what must never be committed
 
 ## Privacy and safety
