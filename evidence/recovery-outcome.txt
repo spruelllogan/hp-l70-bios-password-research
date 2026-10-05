@@ -8,8 +8,7 @@ Outcome:
 - the offline-recovered physical-key candidate was accepted by firmware setup;
 - the BIOS administrator password was removed successfully;
 - the machine then accepted the official HP BIOS update from the previously prepared USB media;
+- an operating-system-side check after reboot reported `L70 Ver. 01.47`, BIOS release date `03/03/2020`;
 - no firmware binary, real password hash, recovered password, or recovered physical-key sequence is disclosed here.
 
 This confirms that the recovered SHA-1 preimage corresponded to the firmware's actual administrator-password verifier on the tested system, not merely to an offline reimplementation.
-
-The exact updated BIOS revision should be recorded separately after an operating-system-side version check.
