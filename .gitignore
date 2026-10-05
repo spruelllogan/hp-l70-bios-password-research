@@ -1,0 +1,32 @@
+# Firmware / vendor binaries
+*.bin
+*.rom
+*.fd
+*.cap
+*.efi
+*.exe
+*.dump
+*.spi
+
+# Password-cracking artifacts and raw candidate sets
+*.potfile
+*.restore
+*.hex
+*.sha1
+
+# Raw logs may contain hostnames, usernames, serials, UUIDs, hashes, or paths
+*.log
+raw/
+private/
+evidence-private/
+
+# Python / local environments
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editor / OS noise
+.DS_Store
+*.swp
+*~
