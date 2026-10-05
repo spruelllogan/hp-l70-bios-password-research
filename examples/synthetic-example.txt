@@ -1,0 +1,31 @@
+Synthetic HP L70 password example
+=================================
+
+This file contains no real machine password, password hash, serial number, UUID,
+or other credential material.
+
+Visible example password:
+    root1234!?
+
+Using the verified US-English physical-key equivalence:
+
+    r -> 13
+    o -> 18
+    o -> 18
+    t -> 14
+    1 -> 02
+    2 -> 03
+    3 -> 04
+    4 -> 05
+    ! -> 02
+    ? -> 35
+
+Converted byte sequence:
+    13 18 18 14 02 03 04 05 02 35
+
+SHA-1:
+    ad03a4db11fd1bda9b93f8a58474b735659872ab
+
+Because Shift/case state is discarded before hashing, capitalization variants
+of "root" produce the same converted bytes, and "1" is equivalent to "!" for
+the hash input on this layout.
