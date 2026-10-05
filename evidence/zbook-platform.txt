@@ -1,0 +1,16 @@
+HP L70 research platform
+========================
+
+System product: HP ZBook 17
+BIOS vendor: Hewlett-Packard
+BIOS version: L70 Ver. 01.08
+BIOS release date: 04/10/2014
+Baseboard product: 190A
+
+Intentionally excluded:
+- system serial number
+- UUID
+- asset tag
+- MAC addresses
+- BIOS administrator hash
+- recovered password

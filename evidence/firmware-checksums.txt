@@ -1,0 +1,19 @@
+Firmware analysis checksums
+===========================
+
+Stock L70 01.08 BIOS payload
+Not present at the expected local analysis path.
+
+Analyzed SmmPlatform module
+SHA256: 1f770c776c85d3c3a6df65fae2f176c48a3f7dfa33a2e366cb4f21185d0ad582
+Size: 753600 bytes
+
+Embedded US-English keyboard-layout blob
+Module offset: 0x2C6A0
+Length:        0x11A (282 bytes)
+SHA256: 6c8d0caefdb0d2303e3ca0463dc9ff740fa500e1e4b39fe7267d5dd15b361553
+
+Known independently recorded stock BIOS SHA256:
+4ebfd505f5021021adb662f72cf0f70531668f82e3efb3759078d0c282e727de
+
+No firmware binaries are stored in this repository.
