@@ -18,3 +18,17 @@ python3 -m unittest discover -s tests -v
 ```
 
 The helper does not run Hashcat, alter checkpoints, access private credentials, or restart the recovery service. It is **not** a deployed CF-54 duration-based recovery launcher. See [CF-54 runtime design](../platforms/panasonic/toughbook-cf54/runtime-design.md) for the incomplete integration requirements.
+
+## Install the generic timing utility on your own machine
+
+The optional [installer](install_time_budget.sh) fetches the public repository, verifies the previously reviewed helper and tests by Git object ID, runs six offline synthetic unit tests, and places a user-local `bios-time-budget` command under `~/.local/bin/`. It requires Git, Python 3, and no administrator access.
+
+```bash
+curl -fL --proto '=https' --tlsv1.2 -o /tmp/install-time-budget.sh \
+  https://raw.githubusercontent.com/spruelllogan/hp-l70-bios-password-research/main/tools/install_time_budget.sh
+bash -n /tmp/install-time-budget.sh
+bash /tmp/install-time-budget.sh
+python3 ~/.local/bin/bios-time-budget plan 8h --timezone America/Phoenix
+```
+
+This **only installs a general timing calculator**; it does not install or update the private CF-54 recovery runner or its checkpoint integration, and it will not start a GPU job.
