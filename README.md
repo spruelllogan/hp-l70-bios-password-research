@@ -20,6 +20,10 @@ Read-only firmware authentication research and owner-authorized recovery notes, 
 
 Original HP files, tools, examples and evidence **remain at their existing paths** under `docs/`, `tools/`, `examples/`, and `evidence/`; existing external links continue to work.
 
+## Generic timing helper
+
+The [elapsed-time budget helper](tools/time_budget.py) parses duration specifications and calculates deadlines at invocation time. It is not connected to a device-specific recovery runner; see [the CF-54 runtime integration status](platforms/panasonic/toughbook-cf54/runtime-design.md).
+
 ## Scope
 
 This public repository does **not** contain original device firmware, extracted proprietary modules, private password digests, actual recovered passwords, serial numbers, raw logs, private dictionaries or Hashcat restore/pot files. Research findings are version-specific. Prefer vendor-supported service and use this material only for devices you own or are explicitly authorized to repair.
