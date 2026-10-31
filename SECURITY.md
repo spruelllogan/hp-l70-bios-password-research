@@ -1,22 +1,16 @@
 # Security and sensitive-data policy
 
-This repository is intended for authorized repair and firmware research.
+This is a **public** repository documenting owner-authorized, read-only firmware authentication research.
 
-## Please do not submit
+Do not include in Git commits, PRs, issues, discussions, or screenshots:
 
-Do not open an issue, discussion, pull request, or attachment containing:
+- any real administrator/supervisor password, equivalent physical-key sequence, real digest, or NVRAM credential record;
+- complete SPI/BIOS/NVRAM dumps or extracted proprietary vendor binaries;
+- real Hashcat pot/restore/checkpoint files, candidate lists, unreviewed logs or tool output containing private data;
+- serial numbers, UUIDs, MAC addresses, inventory IDs, secrets, tokens or credentials.
 
-- a real BIOS administrator password;
-- a real BIOS password hash/digest;
-- a complete SPI or BIOS dump;
-- extracted proprietary HP firmware binaries;
-- system serial numbers, UUIDs, MAC addresses, or asset tags;
-- private keys, tokens, or account credentials.
+Use synthetic fixtures and reviewed aggregate data. Public vendor **package** checksums may be appropriate for reproducibility; avoid checksums identifying a private machine's entire SPI dump.
 
-If reproduction requires machine-specific data, describe the behavior and provide sanitized metadata or synthetic fixtures instead.
+Document vendor, exact firmware revision, method, uncertainty, and verification level. A static code trace is not proof a password was accepted on hardware. Do not generalize HP L70 results to Panasonic CF-54.
 
-## Responsible scope
-
-Reports that add support for another firmware revision or platform should include enough information to reproduce the finding without assuming that offsets or storage formats are identical to L70 01.08.
-
-Prefer read-only analysis and verification. This project does not maintain generic unlocked firmware images.
+This repository does not maintain generic unlocked firmware, device-specific bypass images or firmware-write instructions. See [data handling](docs/DATA_HANDLING.md).

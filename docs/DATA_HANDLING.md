@@ -1,31 +1,28 @@
-# Data handling and publication scope
+# Public data-handling policy
 
-This repository documents reverse engineering of HP L70 BIOS administrator-password handling using reproducible, read-only analysis.
+This repository contains **sanitized research for specific HP and Panasonic firmware builds**, not machine-specific recovery state.
 
-## Do not commit
+## Never commit
 
-The public research record must not contain:
+- Complete SPI/BIOS/NVRAM firmware dumps or extracted vendor modules, even temporarily.
+- Actual credential hashes, verifier bytes, supervisor passwords, equivalent physical-key sequences, private candidates, Hashcat pot/restore files and checkpoints.
+- Serial numbers, UUIDs, MAC addresses, service keys, host access tokens or private paths exposing those items.
+- Unreviewed terminal transcripts, screenshots or runtime logs.
+- Unique fingerprints of a private machine's full SPI image without explicit publication review.
 
-- complete SPI, BIOS, or firmware dumps;
-- extracted proprietary firmware binaries;
-- machine serial numbers, UUIDs, MAC addresses, or other unique identifiers;
-- the real recovered administrator-password hash;
-- the recovered administrator password or equivalent physical-key sequence from the research machine;
-- Hashcat potfiles, restore files, raw candidate lists, or other cracking-session state;
-- raw terminal logs that have not been reviewed and sanitized.
+## Acceptable after review
 
-## Safe to commit
+- Vendor/model family and firmware-version identifiers (not unique device IDs).
+- General code-flow notes, documented offsets scoped to a particular firmware revision, limited excerpts needed for reproducibility.
+- Tools operating on **user-provided** firmware and synthetic credentials, synthetic tests, coarse aggregate completion statistics.
+- Reviewed claims and explicit unresolved issues.
+- Checksums of **publicly distributed vendor firmware packages** where needed for reproducibility.
 
-The repository may contain:
+## Verification vocabulary
 
-- model-family and firmware-version information needed to identify the tested platform;
-- cryptographic hashes of publicly distributed HP firmware packages for reproducibility;
-- function addresses, offsets, control-flow notes, and short disassembly excerpts needed to explain the reverse engineering;
-- original scripts that parse a user-supplied firmware image or verify synthetic examples;
-- synthetic hashes, synthetic passwords, and synthetic scan-code examples;
-- aggregate benchmark figures that do not expose private machine identifiers;
-- sanitized terminal transcripts when they materially support a finding.
+1. **Verified on hardware:** recovered entry was actually accepted by tested firmware.
+2. **Code-level evidence:** an inspected firmware routine implements the described behavior.
+3. **Synthetic verification:** an implementation reproduces a controlled fixture.
+4. **Unverified or third-party:** not reproduced on matching firmware.
 
-## Scope of claims
-
-Findings should be described as verified for the exact firmware/platform tested unless independently reproduced elsewhere. Similar behavior on other HP business systems should be labeled as unverified until confirmed.
+Don't conflate levels, and don't assume algorithms transfer from one manufacturer to another. Review the final diff and Git history before publishing: removing leaked content later does not reliably erase it. See [SECURITY.md](../SECURITY.md).
