@@ -1,4 +1,4 @@
-# Firmware / vendor binaries
+# Firmware images and extracted proprietary modules
 *.bin
 *.rom
 *.fd
@@ -7,26 +7,43 @@
 *.exe
 *.dump
 *.spi
+*.img
+*.nvram
+*.vars
+*.uefi
+*.flash
 
-# Password-cracking artifacts and raw candidate sets
+# Secrets and recovery state
 *.potfile
 *.restore
+*.restore.*
 *.hex
 *.sha1
-
-# Raw logs may contain hostnames, usernames, serials, UUIDs, hashes, or paths
-*.log
+*.hcat
+*.hcstat
+*.hcstat2
+*.secret
+*.key
+*-private.txt
+recovered-password*
+checkpoint*/
 raw/
 private/
 evidence-private/
+firmware-private/
+original-dumps/
 
-# Python / local environments
+# Generated, potentially sensitive outputs
+*.log
+*.log.*
+*.session
+*.state
+
+# Python, editors, OS
 __pycache__/
 *.pyc
 .venv/
 venv/
-
-# Editor / OS noise
 .DS_Store
 *.swp
 *~
